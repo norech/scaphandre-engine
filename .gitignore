@@ -1,0 +1,6 @@
+.vs
+_Dependencies/*
+!_Dependencies/PLACE_SUBNAUTICA_DLL_HERE
+packages
+*/bin/*
+*/obj/*
