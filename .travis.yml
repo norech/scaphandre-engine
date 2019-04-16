@@ -1,15 +1,12 @@
 language: csharp
 solution: ScaphandreEngine.sln
-os: windows
 mono:
   - latest
-  - 3.12.0
-  - 3.10.0
 install:
 - nuget restore ScaphandreEngine.sln
 script:
 - msbuild /p:Configuration=Release ScaphandreEngine.sln
-- "./scripts/copyScaphandreToInstaller.bat"
+- ./scripts/copyScaphandreToInstaller
 after_script:
 - cd ./ScaphandreInstaller/bin/Release
 - 7z a -tzip ../../../scaphandre-installer.zip *.dll *.exe Scaphandre/*.dll -ssc

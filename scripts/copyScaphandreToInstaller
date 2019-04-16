@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+rm -r "$2/ScaphandreInstaller/bin/$1/Scaphandre";
+mkdir "$2/ScaphandreInstaller/bin/$1/Scaphandre";
+
+cd "$2/Assembly-CSharp.ScaphandreEngine.mm/bin/%1";
+find . -name \*.dll -exec cp {} "$2/ScaphandreInstaller/bin/$1/Scaphandre" \;

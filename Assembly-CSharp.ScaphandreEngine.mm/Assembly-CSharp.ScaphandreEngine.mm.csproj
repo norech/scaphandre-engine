@@ -172,6 +172,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>$(SolutionDir)scripts\copyScaphandreToInstaller.bat $(ConfigurationName) "$(SolutionDir)"</PostBuildEvent>
+    <PostBuildEvent>$(SolutionDir)scripts\copyScaphandreToInstaller $(ConfigurationName) "$(SolutionDir)"</PostBuildEvent>
   </PropertyGroup>
 </Project>
