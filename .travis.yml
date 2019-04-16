@@ -1,6 +1,10 @@
 language: csharp
 solution: ScaphandreEngine.sln
 os: windows
+mono:
+  - latest
+  - 3.12.0
+  - 3.10.0
 install:
 - nuget restore ScaphandreEngine.sln
 script:
