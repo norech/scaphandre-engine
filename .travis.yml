@@ -1,7 +1,6 @@
 language: csharp
 solution: ScaphandreEngine.sln
-mono:
-  - latest
+mono: latest
 install:
   - nuget restore ScaphandreEngine.sln
   - rm -r _Dependencies
@@ -9,7 +8,7 @@ install:
   - chmod +x ./scripts/copyScaphandreToInstaller
 script:
   - msbuild /p:Configuration=Release ScaphandreEngine.sln
-  - ./scripts/copyScaphandreToInstaller Release $CD
+  - ./scripts/copyScaphandreToInstaller Release $PWD
 after_script:
   - cd ./ScaphandreInstaller/bin/Release
   - 7z a -tzip ../../../scaphandre-installer.zip *.dll *.exe Scaphandre/*.dll -ssc
