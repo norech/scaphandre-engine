@@ -78,54 +78,6 @@
       <HintPath>..\_Dependencies\LumenWorks.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Mono.Cecil">
-      <HintPath>..\_Dependencies\Mono.Cecil.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Mono.Cecil.Mdb">
-      <HintPath>..\_Dependencies\Mono.Cecil.Mdb.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Mono.Cecil.Pdb">
-      <HintPath>..\_Dependencies\Mono.Cecil.Pdb.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Mono.Cecil.Rocks">
-      <HintPath>..\_Dependencies\Mono.Cecil.Rocks.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Mono.Data.Tds">
-      <HintPath>..\_Dependencies\Mono.Data.Tds.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Mono.Security">
-      <HintPath>..\_Dependencies\Mono.Security.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MonoMod">
-      <HintPath>..\_Dependencies\MonoMod.exe</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MonoMod.BaseLoader">
-      <HintPath>..\_Dependencies\MonoMod.BaseLoader.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MonoMod.DebugIL">
-      <HintPath>..\_Dependencies\MonoMod.DebugIL.exe</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MonoMod.RuntimeDetour">
-      <HintPath>..\_Dependencies\MonoMod.RuntimeDetour.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MonoMod.RuntimeDetour.HookGen">
-      <HintPath>..\_Dependencies\MonoMod.RuntimeDetour.HookGen.exe</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MonoMod.Utils">
-      <HintPath>..\_Dependencies\MonoMod.Utils.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\_Dependencies\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
@@ -158,16 +110,11 @@
       <HintPath>..\_Dependencies\UnityScript.Lang.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="YamlDotNet">
-      <HintPath>..\_Dependencies\YamlDotNet.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ScaphandreEngine\ScaphandreEngine.csproj">
       <Project>{39d6e665-bcfd-4f82-a912-68460b533fc8}</Project>
       <Name>ScaphandreEngine</Name>
-      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
