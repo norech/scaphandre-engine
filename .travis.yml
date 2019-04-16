@@ -3,14 +3,16 @@ solution: ScaphandreEngine.sln
 mono:
   - latest
 install:
-- nuget restore ScaphandreEngine.sln
+  - nuget restore ScaphandreEngine.sln
+  - rm -r _Dependencies
+  - git clone $TRAVIS_DEPENDENCIES_REPO _Dependencies
 script:
-- msbuild /p:Configuration=Release /p:BuildProjectReferences=false /t:Build ScaphandreEngine.sln
-- ./scripts/copyScaphandreToInstaller
+  - msbuild /p:Configuration=Release /p:BuildProjectReferences=false /t:Build ScaphandreEngine.sln
+  - ./scripts/copyScaphandreToInstaller
 after_script:
-- cd ./ScaphandreInstaller/bin/Release
-- 7z a -tzip ../../../scaphandre-installer.zip *.dll *.exe Scaphandre/*.dll -ssc
-- cd ../../..
+  - cd ./ScaphandreInstaller/bin/Release
+  - 7z a -tzip ../../../scaphandre-installer.zip *.dll *.exe Scaphandre/*.dll -ssc
+  - cd ../../..
 deploy:
   provider: releases
   api_key:
