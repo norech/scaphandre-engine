@@ -5,7 +5,7 @@ mono:
 install:
 - nuget restore ScaphandreEngine.sln
 script:
-- msbuild /p:Configuration=Release ScaphandreEngine.sln
+- msbuild /p:Configuration=Release /p:BuildProjectReferences=false /t:Build ScaphandreEngine.sln
 - ./scripts/copyScaphandreToInstaller
 after_script:
 - cd ./ScaphandreInstaller/bin/Release
