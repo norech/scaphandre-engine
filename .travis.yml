@@ -2,22 +2,22 @@ language: csharp
 solution: ScaphandreEngine.sln
 mono: latest
 install:
-  - nuget restore ScaphandreEngine.sln
-  - rm -r _Dependencies
-  - git clone $TRAVIS_DEPENDENCIES_REPO _Dependencies
-  - chmod +x ./scripts/copyScaphandreToInstaller
+- nuget restore ScaphandreEngine.sln
+- rm -r _Dependencies
+- git clone $TRAVIS_DEPENDENCIES_REPO _Dependencies
+- chmod +x ./scripts/copyScaphandreToInstaller
 script:
-  - msbuild /p:Configuration=Release ScaphandreEngine.sln
-  - ./scripts/copyScaphandreToInstaller Release $PWD
+- msbuild /p:Configuration=Release ScaphandreEngine.sln
+- "./scripts/copyScaphandreToInstaller Release $PWD"
 after_script:
-  - cd ./ScaphandreInstaller/bin/Release
-  - 7z a -tzip ../../../scaphandre-installer.zip *.dll *.exe Scaphandre/*.dll -ssc
-  - cd ../../..
+- cd ./ScaphandreInstaller/bin/Release
+- 7z a -tzip ../../../scaphandre-installer.zip *.dll *.exe Scaphandre/*.dll -ssc
+- cd ../../..
 deploy:
   provider: releases
   api_key:
-    - secure: "hyq6bfh7xnMIs04bui+Ws/5jGQUwoeWWiBp02EGmLyhDTukHUiUbjpXprznrwkis2gtqFTIX0cyChrDxqzzecrrjyirrYT+NKHT03qsvLMe8U8nezT2H/ghcguLozjG85ilhJ9epnPP8qVuYQXq8hiIlbo2AEbGsxfntBjVZoy5w5d6cSPA4NRi3CGi1XNVZ0/ztz3OhgqzEx5WQ8eGqBN2ZoN3G8vOW8uLkwuVsuHWPNzB68VFmmPsCPA9Ge9ccsNdqmOKvnBykf77FwxAtQfauRJx13p2n2Uc5qROaUNvHHcNvcLQ7Hl1q1hHwxtOZFO6HdXgHAfISNBXdgf3Q0aCt6GwRzYc9Al0Xx4Rv7LJjlEl8FEfDoZ83BxdvUn0kExKjjco+IORfTmJNKl1If9qQRkWtifVMtZ5jnLrAjHwAJU3miadXO1Nm1PhHoMtJe1eDVTve7fVE/6OEAyOxtRe+pBamAStLovIByrrVxD7VIzQMoVJeRDM6tP0/qrYyYsXtHvrXVeLzPWt2lu7o6ilcs7f2vLq5V/ucCK1ZWEQcS2s0iAmBtLyFsBaueT7PlZDoKz87PydyqaWTx0uwyvRPfAmdlS4lHj9qEdT3K5oHQtOBq9Umv8hk9jXNiRjaxzWRmEp0+ieGk6qYyodujieCsUaHZmPQcQTJVKlSXHA="
-  file: "scaphandre-installer.zip"
+    secure: "gPHfeW+VTx/0WPXRiCZaNvMzxu2mmcwFdgkFu/Lma/B6YGlG2Ab00tcMm5jnqKpL+kMWSYbF+dBtxXaMcmayXk5f3OtqGplH/eR4DDYUpGylhcnm1E/ME4RU2yf6tVKlr2giYy+X+kZz/VfDhEqTJeVR9WuU4Cv5TAflNduMMq488sYsF9EEhyScSp1GTLNUcsA1QVHtOy2V2xyG+rSW0OzJ+WCzDcAA6GWtFY7J51fCU9MDwpBMl8HrZkNDgELOTFLvcJM8sCSdQkfcuI5hfjQWnIpHEpe1SF+w/tX200x3v6grWl1Ln+KjE6Kt/w9YmiFLq2bDkJYvwEL/ICq8TXvjFurpbLP9Gshah0AvyX5N/f/Iu03JAEVfYl2bWI4gPFiHWB9mYpucCaeQmczXVrxbJZi15GG6L9PUTZ2AaadUTlnyVtjCjH3DWnE83irki/Pve3lb3NFJQx+bSM05vlgGY20PkMghPo+wwZ/+xpV5GdN8Qg2NYQ8xrCYVkgTKCR0hHqAhdKK80NqYkl+6DcgK/rjMMQsSeJjzREOxMTfA431803tBa/pIWvdmr1EXx5Y0e1G0/CeXNznLYK8Rx1lqyFhrQ8Y1dfscCbm7+68JR9XL3r8b6vBlTbcnXQ/73u2x/c6EsjwSxVWuebDwZr7ktRYqv8iZCOhECHhRz9w="
+  file: scaphandre-installer.zip
   skip_cleanup: true
   on:
     tags: true
