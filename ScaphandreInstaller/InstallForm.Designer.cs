@@ -31,8 +31,8 @@
             this.selectFolderButton = new System.Windows.Forms.Button();
             this.installTextBox = new System.Windows.Forms.TextBox();
             this.installButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.scaphandreLabel = new System.Windows.Forms.Label();
+            this.versionLabel = new System.Windows.Forms.Label();
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.uninstallButton = new System.Windows.Forms.Button();
             this.createModdingArchive = new System.Windows.Forms.CheckBox();
@@ -66,24 +66,24 @@
             this.installButton.UseVisualStyleBackColor = true;
             this.installButton.Click += new System.EventHandler(this.installButton_Click);
             // 
-            // label1
+            // scaphandreLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 29);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Scaphandre Engine";
+            this.scaphandreLabel.AutoSize = true;
+            this.scaphandreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scaphandreLabel.Location = new System.Drawing.Point(7, 9);
+            this.scaphandreLabel.Name = "scaphandreLabel";
+            this.scaphandreLabel.Size = new System.Drawing.Size(225, 29);
+            this.scaphandreLabel.TabIndex = 4;
+            this.scaphandreLabel.Text = "Scaphandre Engine";
             // 
-            // label2
+            // versionLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(218, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "v0.0.1.0 for Subnautica dec.2018";
+            this.versionLabel.AutoSize = true;
+            this.versionLabel.Location = new System.Drawing.Point(12, 42);
+            this.versionLabel.Name = "versionLabel";
+            this.versionLabel.Size = new System.Drawing.Size(93, 17);
+            this.versionLabel.TabIndex = 5;
+            this.versionLabel.Text = "%VERSION%";
             // 
             // uninstallButton
             // 
@@ -111,8 +111,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(406, 215);
             this.Controls.Add(this.createModdingArchive);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.versionLabel);
+            this.Controls.Add(this.scaphandreLabel);
             this.Controls.Add(this.uninstallButton);
             this.Controls.Add(this.installButton);
             this.Controls.Add(this.installTextBox);
@@ -132,8 +132,8 @@
         private System.Windows.Forms.Button selectFolderButton;
         private System.Windows.Forms.TextBox installTextBox;
         private System.Windows.Forms.Button installButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label scaphandreLabel;
+        private System.Windows.Forms.Label versionLabel;
         private System.Windows.Forms.FolderBrowserDialog folderBrowser;
         private System.Windows.Forms.Button uninstallButton;
         private System.Windows.Forms.CheckBox createModdingArchive;

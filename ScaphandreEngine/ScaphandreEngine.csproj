@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="ScaphandreEngine\Commands\Command.cs" />
     <Compile Include="ScaphandreEngine\Commands\CommandBase.cs" />
     <Compile Include="ScaphandreEngine\GameRegistry.cs" />

@@ -26,6 +26,7 @@ namespace ScaphandreInstaller
 
         private void InstallForm_Load(object sender, EventArgs e)
         {
+            versionLabel.Text = Application.ProductVersion;
             foreach(var possibleInstallPath in possibleInstallPaths)
             {
                 if (Installer.IsValidPath(possibleInstallPath))
