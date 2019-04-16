@@ -8,8 +8,8 @@ install:
   - git clone $TRAVIS_DEPENDENCIES_REPO _Dependencies
   - chmod +x ./scripts/copyScaphandreToInstaller
 script:
-  - msbuild /p:Configuration=Release /p:BuildProjectReferences=false /t:Build ScaphandreEngine.sln
-  - ./scripts/copyScaphandreToInstaller
+  - msbuild /p:Configuration=Release ScaphandreEngine.sln
+  - ./scripts/copyScaphandreToInstaller Release $CD
 after_script:
   - cd ./ScaphandreInstaller/bin/Release
   - 7z a -tzip ../../../scaphandre-installer.zip *.dll *.exe Scaphandre/*.dll -ssc
@@ -17,7 +17,8 @@ after_script:
 deploy:
   provider: releases
   api_key:
-    secure: b1p4ZYcHJ+mhwk+Uoe/S7MLPqBvyS/dqK1E7X8DtyFOp6SD9DE6R3JADQbmBD6rmdfdrZ8yp0esxApEvTbUcLzOMFSYdKvKbTahBLQqnHS0C9A8X+Kc6W6Ab+EVjlbA0ZhLQVSG7LxDLuW6779SfQvc9X5jEMZh9hpP/pTIIl9b4PCSbo9rCnvduDFiAkS0ZSezo7QSgJ3wGXdc6IddAsoyNvNhcfP2jkoxVHCH0RVbpGjKoRyXzMFF5AOduf+9/Ge51FNDNhNHKxME7K3+Jwq//1x+m9ARj+S31TUEQbceWiGfUgrH7mDKKcWKkr3Bndq8XJJsrJPuVM+xVXphoxP7YQLLytHJcBSpBlwI1aLDycbQwaTMeXlJpyGHkd6yvsL97YN9rzDkzxE0MoTp+YRICCG/inQ1w8MVzDbb/AELlzruusQo8vgyCXyJl9UQzHwH5ClzVDGKgDwU+albxSxfajnHpdqjpjWMGwtuHSVo4TQ2X4gcH/Kvtf9050xEdC74BgtDtncMpq8AhlDsaH3GdqduYKbLdR1u2uRfEUWMRWfKZL9Yei3+BBm/srIQCssomFzXn1lFFrlQXpDOC7KmTAdCtw4VT5B+re5exnHX0Yyx93avaICWLLM9EAe6oOr29XV6nm2dfVcFtPgxJjD0QGT3vFlHNfI6KkPFJvQU=
-  file: scaphandre-installer.zip
+    secure: "hyq6bfh7xnMIs04bui+Ws/5jGQUwoeWWiBp02EGmLyhDTukHUiUbjpXprznrwkis2gtqFTIX0cyChrDxqzzecrrjyirrYT+NKHT03qsvLMe8U8nezT2H/ghcguLozjG85ilhJ9epnPP8qVuYQXq8hiIlbo2AEbGsxfntBjVZoy5w5d6cSPA4NRi3CGi1XNVZ0/ztz3OhgqzEx5WQ8eGqBN2ZoN3G8vOW8uLkwuVsuHWPNzB68VFmmPsCPA9Ge9ccsNdqmOKvnBykf77FwxAtQfauRJx13p2n2Uc5qROaUNvHHcNvcLQ7Hl1q1hHwxtOZFO6HdXgHAfISNBXdgf3Q0aCt6GwRzYc9Al0Xx4Rv7LJjlEl8FEfDoZ83BxdvUn0kExKjjco+IORfTmJNKl1If9qQRkWtifVMtZ5jnLrAjHwAJU3miadXO1Nm1PhHoMtJe1eDVTve7fVE/6OEAyOxtRe+pBamAStLovIByrrVxD7VIzQMoVJeRDM6tP0/qrYyYsXtHvrXVeLzPWt2lu7o6ilcs7f2vLq5V/ucCK1ZWEQcS2s0iAmBtLyFsBaueT7PlZDoKz87PydyqaWTx0uwyvRPfAmdlS4lHj9qEdT3K5oHQtOBq9Umv8hk9jXNiRjaxzWRmEp0+ieGk6qYyodujieCsUaHZmPQcQTJVKlSXHA="
+  file: "scaphandre-installer.zip"
+  skip_cleanup: true
   on:
-    repo: Norech/scaphandre-engine
+    tags: true
