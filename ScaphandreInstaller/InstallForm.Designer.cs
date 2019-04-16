@@ -36,11 +36,12 @@
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.uninstallButton = new System.Windows.Forms.Button();
             this.createModdingArchive = new System.Windows.Forms.CheckBox();
+            this.statusLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // selectFolderButton
             // 
-            this.selectFolderButton.Location = new System.Drawing.Point(272, 116);
+            this.selectFolderButton.Location = new System.Drawing.Point(272, 125);
             this.selectFolderButton.Name = "selectFolderButton";
             this.selectFolderButton.Size = new System.Drawing.Size(122, 29);
             this.selectFolderButton.TabIndex = 0;
@@ -50,7 +51,7 @@
             // 
             // installTextBox
             // 
-            this.installTextBox.Location = new System.Drawing.Point(12, 88);
+            this.installTextBox.Location = new System.Drawing.Point(12, 97);
             this.installTextBox.Name = "installTextBox";
             this.installTextBox.Size = new System.Drawing.Size(382, 22);
             this.installTextBox.TabIndex = 1;
@@ -58,7 +59,7 @@
             // 
             // installButton
             // 
-            this.installButton.Location = new System.Drawing.Point(12, 116);
+            this.installButton.Location = new System.Drawing.Point(12, 125);
             this.installButton.Name = "installButton";
             this.installButton.Size = new System.Drawing.Size(110, 64);
             this.installButton.TabIndex = 2;
@@ -87,7 +88,7 @@
             // 
             // uninstallButton
             // 
-            this.uninstallButton.Location = new System.Drawing.Point(284, 151);
+            this.uninstallButton.Location = new System.Drawing.Point(284, 160);
             this.uninstallButton.Name = "uninstallButton";
             this.uninstallButton.Size = new System.Drawing.Size(110, 29);
             this.uninstallButton.TabIndex = 3;
@@ -98,7 +99,7 @@
             // createModdingArchive
             // 
             this.createModdingArchive.AutoSize = true;
-            this.createModdingArchive.Location = new System.Drawing.Point(15, 186);
+            this.createModdingArchive.Location = new System.Drawing.Point(15, 195);
             this.createModdingArchive.Name = "createModdingArchive";
             this.createModdingArchive.Size = new System.Drawing.Size(286, 21);
             this.createModdingArchive.TabIndex = 6;
@@ -106,10 +107,21 @@
             this.createModdingArchive.UseVisualStyleBackColor = true;
             this.createModdingArchive.CheckedChanged += new System.EventHandler(this.createModdingArchive_CheckedChanged);
             // 
+            // statusLabel
+            // 
+            this.statusLabel.ForeColor = System.Drawing.Color.Red;
+            this.statusLabel.Location = new System.Drawing.Point(12, 70);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(382, 23);
+            this.statusLabel.TabIndex = 7;
+            this.statusLabel.Text = "%ERROR%";
+            this.statusLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
             // InstallForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(406, 215);
+            this.ClientSize = new System.Drawing.Size(406, 223);
+            this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.createModdingArchive);
             this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.scaphandreLabel);
@@ -137,6 +149,7 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowser;
         private System.Windows.Forms.Button uninstallButton;
         private System.Windows.Forms.CheckBox createModdingArchive;
+        private System.Windows.Forms.Label statusLabel;
     }
 }
 

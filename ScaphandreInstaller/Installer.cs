@@ -6,6 +6,7 @@ using SharpCompress.Writers;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -32,6 +33,29 @@ namespace ScaphandreInstaller
             var binariesFolder = GetGameBinariesFolder(path);
 
             return File.Exists(Path.Combine(binariesFolder, "Assembly-CSharp.unpatched.dll"));
+        }
+        
+        public static DateTime GetSubnauticaBuildTime(string path)
+        {
+            var buildFile = Path.Combine(path, "__buildtime.txt");
+            DateTime minValue = DateTime.MinValue;
+
+            try
+            {
+                if (File.Exists(buildFile))
+                {
+                    string s = File.ReadAllText(buildFile).Trim();
+                    CultureInfo culture = new CultureInfo("en-US");
+                    minValue = Convert.ToDateTime(s, culture);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            return minValue;
         }
 
         BackgroundWorker worker;
@@ -106,26 +130,28 @@ namespace ScaphandreInstaller
             var executableFolder = AppDomain.CurrentDomain.BaseDirectory;
             var scaphandreFolder = Path.Combine(executableFolder, "Scaphandre");
 
-            var settings = Properties.Settings.Default;
-            settings.installedManagedBinaries = new System.Collections.Specialized.StringCollection();
-
-            foreach (var path in Directory.GetFiles(scaphandreFolder))
+            using (var sr = new StreamWriter(Path.Combine(binariesFolder, "Scaphandre.txt")))
             {
-                var file = Path.GetFileName(path);
-                var fileInBinaries = Path.Combine(binariesFolder, file);
-                if (File.Exists(fileInBinaries))
+                var settings = Properties.Settings.Default;
+                settings.installedManagedBinaries = new System.Collections.Specialized.StringCollection();
+
+                foreach (var path in Directory.GetFiles(scaphandreFolder))
                 {
-                    Console.WriteLine("WARNING: " + fileInBinaries + " already exists");
-                    continue;
+                    var file = Path.GetFileName(path);
+                    var fileInBinaries = Path.Combine(binariesFolder, file);
+                    if (File.Exists(fileInBinaries))
+                    {
+                        Console.WriteLine("WARNING: " + fileInBinaries + " already exists");
+                        continue;
+                    }
+
+                    File.Copy(path, Path.Combine(targetFolder, file));
+                    File.Copy(path, Path.Combine(binariesFolder, file));
+
+                    settings.installedManagedBinaries.Add(file);
                 }
-
-                File.Copy(path, Path.Combine(targetFolder, file));
-                File.Copy(path, Path.Combine(binariesFolder, file));
-
-                settings.installedManagedBinaries.Add(file);
             }
-
-            settings.Save();
+            
             Console.WriteLine("Copied Scaphandre");
         }
 
@@ -272,7 +298,7 @@ namespace ScaphandreInstaller
             worker.ReportProgress(8 * stepFactor, "Done. Doing a bit of cleaning...");
             Thread.Sleep(2000); // This make sure MonoMod is not using the folder
             FilesystemUtil.DeleteDirectory(targetFolder);
-            Console.WriteLine("Finished uninstall task");
+            Console.WriteLine("Finished install task");
         }
         #endregion
 
