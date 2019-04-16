@@ -6,6 +6,7 @@ install:
   - nuget restore ScaphandreEngine.sln
   - rm -r _Dependencies
   - git clone $TRAVIS_DEPENDENCIES_REPO _Dependencies
+  - chmod +x ./scripts/copyScaphandreToInstaller
 script:
   - msbuild /p:Configuration=Release /p:BuildProjectReferences=false /t:Build ScaphandreEngine.sln
   - ./scripts/copyScaphandreToInstaller
