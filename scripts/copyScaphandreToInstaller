@@ -3,6 +3,6 @@
 rm -r "$2/ScaphandreInstaller/bin/$1/Scaphandre";
 mkdir "$2/ScaphandreInstaller/bin/$1/Scaphandre";
 
-cd "$2/Assembly-CSharp.ScaphandreEngine.mm/bin/%1";
+cd "$2/Assembly-CSharp.ScaphandreEngine.mm/bin/$1";
 cp "Assembly-CSharp.ScaphandreEngine.mm.dll" "$2/ScaphandreInstaller/bin/$1/Scaphandre" \;
 cp "ScaphandreEngine.dll" "$2/ScaphandreInstaller/bin/$1/Scaphandre" \;
