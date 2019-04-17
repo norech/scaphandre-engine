@@ -9,7 +9,6 @@ install:
 script:
 - msbuild /p:Configuration=Release ScaphandreEngine.sln
 - "./scripts/copyScaphandreToInstaller Release $PWD"
-after_script:
 - cd ./ScaphandreInstaller/bin/Release
 - 7z a -tzip ../../../scaphandre-installer.zip *.dll *.exe Scaphandre/*.dll -ssc
 - cd ../../..
