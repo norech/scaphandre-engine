@@ -5,7 +5,7 @@ rm -r "$path/ScaphandreInstaller/bin/$1/Scaphandre";
 mkdir -p "$path/ScaphandreInstaller/bin/$1/Scaphandre";
 
 cd "$path/Assembly-CSharp.ScaphandreEngine.mm/bin/$1";
-cp "Assembly-CSharp.ScaphandreEngine.mm.dll" "$path/ScaphandreInstaller/bin/$1/Scaphandre";
-cp "ScaphandreEngine.dll" "$path/ScaphandreInstaller/bin/$1/Scaphandre";
-cp "ScaphandreInjector.dll" "$path/ScaphandreInstaller/bin/$1/Scaphandre";
 cp "ScaphandreInjector.CodeModification.dll" "$path/ScaphandreInstaller/bin/$1/Scaphandre";
+cp "ScaphandreInjector.dll" "$path/ScaphandreInstaller/bin/$1/Scaphandre";
+cp "ScaphandreEngine.dll" "$path/ScaphandreInstaller/bin/$1/Scaphandre";
+cp "Assembly-CSharp.ScaphandreEngine.mm.dll" "$path/ScaphandreInstaller/bin/$1/Scaphandre";

@@ -30,7 +30,7 @@ namespace ScaphandreEngine
 
         /// <summary>
         /// Returns Scaphandre informational version.
-        /// Unsupported in Assembly-CSharp.ScaphandreEngine.mm, use Injector.ScaphandreInformationalVersion instead.
+        /// Unsupported in Assembly-CSharp.ScaphandreEngine.mm, use Scaphandre.InformationalVersion instead.
         /// </summary>
         public static string GetScaphandreInformationalVersion()
         {
@@ -47,7 +47,7 @@ namespace ScaphandreEngine
 
         /// <summary>
         /// Returns Scaphandre version.
-        /// Unsupported in Assembly-CSharp.ScaphandreEngine.mm, use Injector.ScaphandreVersion instead.
+        /// Unsupported in Assembly-CSharp.ScaphandreEngine.mm, use Scaphandre.Version instead.
         /// </summary>
         public static string GetScaphandreVersion()
         {

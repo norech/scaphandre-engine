@@ -2,6 +2,7 @@
 using System.IO;
 using UnityEngine;
 using ScaphandreEngine.ModLoader;
+using ScaphandreEngine;
 
 namespace ScaphandreInjector
 {
@@ -13,18 +14,20 @@ namespace ScaphandreInjector
         {
             LogOverlay.ListenForLogs();
 
+            Scaphandre.Initializer.PreinitStep();
+
             Debug.Log("Adding global Scaphandre Engine object...");
             injectorGO = new GameObject("___SCAPHANDRE_ENGINE__GO");
             Object.DontDestroyOnLoad(injectorGO);
             CreateScaphandreEngineObjectTree();
             Debug.Log("Added global Scaphandre Engine object");
 
-            var modsFolder = Path.GetFullPath("./Mods");
-            Debug.Log("SEML mods folder: " + modsFolder);
-            
-            Debug.Log("Loading mods...");
-            SemlLoader.instance.LoadModsFromFolder(modsFolder);
-            Debug.Log("Loaded " + SemlLoader.instance.LoadedModsCount + " mods");
+            Scaphandre.Initializer.InitStep(injectorGO);
+        }
+
+        public static void PostInitialize()
+        {
+            Scaphandre.Initializer.PostinitStep();
         }
 
         public static void CreateScaphandreEngineObjectTree()

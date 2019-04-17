@@ -7,6 +7,6 @@ namespace ScaphandreEngine.EventHandling
 {
     public class ListenEventAttribute : Attribute
     {
-        public EventPriority priority;
+        public EventPriority priority = EventPriority.Medium;
     }
 }

@@ -1,7 +1,6 @@
 ﻿#pragma warning disable CS0626 // orig_ method is marked external and has no attributes on it.
-using ScaphandreInjector;
 using MonoMod;
-using System;
+using ScaphandreEngine;
 using UnityEngine.UI;
 
 class patch_uGUI_BuildWatermark : uGUI_BuildWatermark
@@ -15,6 +14,6 @@ class patch_uGUI_BuildWatermark : uGUI_BuildWatermark
         var plasticChangeSetOfBuild = SNUtils.GetPlasticChangeSetOfBuild();
 
         component.text = Language.main.GetFormat("EarlyAccessWatermarkFormat", dateTimeOfBuild, plasticChangeSetOfBuild)
-            + "\nScaphandre Engine v" + ScaphandreEngine.Scaphandre.Version;
+            + "\nScaphandre Engine v" + Scaphandre.Version;
     }
 }

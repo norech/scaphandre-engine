@@ -17,6 +17,16 @@ namespace ScaphandreEngine.ModLoader
         internal SemlLoader() {
         }
 
+        internal static void Initialize()
+        {
+            var modsFolder = Path.GetFullPath("./Mods");
+            Debug.Log("SEML mods folder: " + modsFolder);
+
+            Debug.Log("Loading mods...");
+            instance.LoadModsFromFolder(modsFolder);
+            Debug.Log("Loaded " + instance.LoadedModsCount + " mods");
+        }
+
         internal static SemlInfo GetSemlInfo(Assembly assembly)
         {
             foreach (var semlInfo in mods)
@@ -66,7 +76,7 @@ namespace ScaphandreEngine.ModLoader
         {
             foreach(var file in Directory.GetFiles(modsFolder))
             {
-                if (Path.GetExtension(file).ToLower() != "dll") continue;
+                if (Path.GetExtension(file).ToLower() != ".dll") continue;
 
                 var name = Path.GetFileNameWithoutExtension(file);
                 var modAssembly = Assembly.LoadFrom(file);

@@ -39,6 +39,7 @@
     <Compile Include="patch_DevConsole.cs" />
     <Compile Include="patch_GameInput.cs" />
     <Compile Include="patch_MainMenuController.cs" />
+    <Compile Include="patch_SystemsSpawner.cs" />
     <Compile Include="patch_uGUI_BuildWatermark.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

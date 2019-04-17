@@ -36,7 +36,7 @@ namespace ScaphandreEngine.EventHandling
             events[listener.ListenedEvent] = listeners;
         }
 
-        private static void TriggerEvent(Event e)
+        public static void TriggerEvent(Event e)
         {
             var listeners = events.GetOrDefault(e.GetType(), new List<EventListener>());
 

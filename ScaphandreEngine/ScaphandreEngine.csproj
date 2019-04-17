@@ -34,19 +34,20 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Commands\Command.cs" />
-    <Compile Include="Commands\CommandBase.cs" />
+    <Compile Include="CommandHandling\Command.cs" />
+    <Compile Include="CommandHandling\CommandBase.cs" />
     <Compile Include="EventHandling\Event.cs" />
     <Compile Include="EventHandling\EventManager.cs" />
     <Compile Include="EventHandling\EventListener.cs" />
     <Compile Include="EventHandling\EventPriority.cs" />
     <Compile Include="EventHandling\ListenEventAttribute.cs" />
+    <Compile Include="Events\LanguageChangeEvent.cs" />
     <Compile Include="GameRegistry.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Scaphandre.cs" />
     <Compile Include="Subnautica.cs" />
     <Compile Include="Utils\StringExtensions.cs" />
-    <Compile Include="Commands\CommandManager.cs" />
+    <Compile Include="CommandHandling\CommandManager.cs" />
     <Compile Include="Menus\Menu.cs" />
     <Compile Include="Menus\IngameMenu.cs" />
     <Compile Include="Message.cs" />
