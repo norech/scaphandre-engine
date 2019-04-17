@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using UnityEngine;
 
-namespace ScaphandreEngine.Commands
+namespace ScaphandreEngine.CommandHandling
 {
     public abstract class CommandBase : Command
     {

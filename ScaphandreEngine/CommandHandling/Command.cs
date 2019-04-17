@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace ScaphandreEngine.Commands
+namespace ScaphandreEngine.CommandHandling
 {
     public interface Command
     {
