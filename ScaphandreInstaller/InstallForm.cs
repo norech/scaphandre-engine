@@ -97,7 +97,7 @@ namespace ScaphandreInstaller
                 if (MessageBox.Show(this, "We could not check the compatibility of your version of Subnautica and Scaphandre. If your game is not compatible, things may not work as intended and mods may be broken." +
                     "\n\nAnyway, do you still want to install Scaphandre Engine?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No) return;
             }
-            else if(ScaphandreEngine.SharedAssemblyInfo.IsSupportedVersion(Installer.GetSubnauticaBuildTime(installTextBox.Text)))
+            else if(!ScaphandreEngine.SharedAssemblyInfo.IsSupportedVersion(Installer.GetSubnauticaBuildTime(installTextBox.Text)))
             {
                 if (MessageBox.Show(this, "Your game don't seem to be compatible with this version of Scaphandre. Things may not work as intended and mods may be broken." +
                     "\n\nAnyway, do you still want to install Scaphandre Engine?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No) return;

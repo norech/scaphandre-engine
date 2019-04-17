@@ -6,10 +6,10 @@ A Subnautica modding engine.
 See [this wiki section to install Scaphandre Engine](https://github.com/Norech/scaphandre-engine/wiki/Getting-Started#install-scaphandre-engine).
 
 
-# How to install a Scaphandre-compatible mod?
+## How to install a Scaphandre-compatible mod?
 See [this wiki section to install Scaphandre-compatible mods](https://github.com/Norech/scaphandre-engine/wiki/Getting-Started#how-to-install-a-scaphandre-compatible-mod).
 
-## Make a mod for Scaphandre Engine
+### Make a mod for Scaphandre Engine
 See [this wiki section to see how to start with modding](https://github.com/Norech/scaphandre-engine/wiki/Getting-Started#create-your-first-mod).
 
 ## Setup solution
