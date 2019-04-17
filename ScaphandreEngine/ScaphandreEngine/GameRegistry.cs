@@ -1,4 +1,5 @@
 ﻿using ScaphandreEngine.Commands;
+using ScaphandreEngine.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,11 @@ namespace ScaphandreEngine
         public void RegisterCommand(Command command)
         {
             CommandManager.RegisterCommand(mod, command);
+        }
+
+        public void RegisterEvents(object eventsHolder)
+        {
+            EventManager.RegisterEvents(mod, eventsHolder);
         }
     }
 }

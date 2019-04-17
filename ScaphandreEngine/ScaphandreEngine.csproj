@@ -36,6 +36,12 @@
     </Compile>
     <Compile Include="ScaphandreEngine\Commands\Command.cs" />
     <Compile Include="ScaphandreEngine\Commands\CommandBase.cs" />
+    <Compile Include="ScaphandreEngine\Events\Event.cs" />
+    <Compile Include="ScaphandreEngine\Events\EventManager.cs" />
+    <Compile Include="ScaphandreEngine\Events\EventListener.cs" />
+    <Compile Include="ScaphandreEngine\Events\EventPriority.cs" />
+    <Compile Include="ScaphandreEngine\Events\ICancellableEvent.cs" />
+    <Compile Include="ScaphandreEngine\Events\ListenEventAttribute.cs" />
     <Compile Include="ScaphandreEngine\GameRegistry.cs" />
     <Compile Include="ScaphandreEngine\Logger.cs" />
     <Compile Include="ScaphandreEngine\Scaphandre.cs" />
