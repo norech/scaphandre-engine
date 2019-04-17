@@ -8,7 +8,6 @@ install:
 - chmod +x ./scripts/copyScaphandreToInstaller
 script:
 - msbuild /p:Configuration=Release /p:AllowedReferenceRelatedFileExtensions=none ScaphandreEngine.sln
-- ./scripts/copyScaphandreToInstaller Release "$PWD"
 - cd ScaphandreInstaller/bin/Release
 - 7z a -tzip ../../../scaphandre-installer.zip *.dll *.exe Scaphandre/*.dll -ssc
 - cd ../../..
