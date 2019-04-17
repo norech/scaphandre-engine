@@ -132,9 +132,6 @@ namespace ScaphandreInstaller
 
             using (var sr = new StreamWriter(Path.Combine(binariesFolder, "Scaphandre.txt")))
             {
-                var settings = Properties.Settings.Default;
-                settings.installedManagedBinaries = new System.Collections.Specialized.StringCollection();
-
                 foreach (var path in Directory.GetFiles(scaphandreFolder))
                 {
                     var file = Path.GetFileName(path);
@@ -148,7 +145,7 @@ namespace ScaphandreInstaller
                     File.Copy(path, Path.Combine(targetFolder, file));
                     File.Copy(path, Path.Combine(binariesFolder, file));
 
-                    settings.installedManagedBinaries.Add(file);
+                    sr.WriteLine(file);
                 }
             }
             
@@ -310,22 +307,27 @@ namespace ScaphandreInstaller
             var binariesFolder = GetGameBinariesFolder(gamePath);
             var settings = Properties.Settings.Default;
 
-            if(settings.installedManagedBinaries == null)
+            if(File.Exists(Path.Combine(binariesFolder, "Scaphandre.txt")))
             {
-                settings.installedManagedBinaries = new System.Collections.Specialized.StringCollection();
+                using (var sr = new StreamReader(Path.Combine(binariesFolder, "Scaphandre.txt")))
+                {
+                    var files = sr.ReadToEnd().Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
+
+                    foreach (var file in files)
+                    {
+                        if (file.Length == 0) continue;
+
+                        Console.WriteLine(" - " + file);
+                        if (!File.Exists(Path.Combine(binariesFolder, file))) continue;
+
+                        File.Delete(Path.Combine(binariesFolder, file));
+                    }
+                }
+                File.Delete(Path.Combine(binariesFolder, "Scaphandre.txt"));
             }
-
-            foreach(var file in settings.installedManagedBinaries)
-            {
-                Console.WriteLine(" - " + file);
-                if (!File.Exists(Path.Combine(binariesFolder, file))) continue;
-
-                File.Delete(Path.Combine(binariesFolder, file));
-            }
-
-            var assemblyCS = Path.Combine(binariesFolder, "Assembly-CSharp.dll");
-            Console.WriteLine(" - " + assemblyCS);
-            File.Delete(assemblyCS);
+            
+            Console.WriteLine(" - Assembly-CSharp.dll");
+            File.Delete(Path.Combine(binariesFolder, "Assembly-CSharp.dll"));
 
             Console.WriteLine("Deleted patched assemblies");
         }
