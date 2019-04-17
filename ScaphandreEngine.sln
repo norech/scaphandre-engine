@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScaphandreInstaller", "Scap
 		{A7E6D23C-EAB3-48B6-8FDA-36A16125294E} = {A7E6D23C-EAB3-48B6-8FDA-36A16125294E}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScaphandreInjector.CodeModification", "ScaphandreInjector.CodeModification\ScaphandreInjector.CodeModification.csproj", "{939EA587-3E65-4106-8A04-80E0388C93A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScaphandreInjector", "ScaphandreInjector\ScaphandreInjector.csproj", "{6CEB1ACE-78DE-4A8F-8A9D-6E10D7E9D6EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{13E851DF-1E4A-48C9-838D-9BD8EF3B8A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13E851DF-1E4A-48C9-838D-9BD8EF3B8A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13E851DF-1E4A-48C9-838D-9BD8EF3B8A69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{939EA587-3E65-4106-8A04-80E0388C93A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{939EA587-3E65-4106-8A04-80E0388C93A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{939EA587-3E65-4106-8A04-80E0388C93A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{939EA587-3E65-4106-8A04-80E0388C93A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CEB1ACE-78DE-4A8F-8A9D-6E10D7E9D6EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CEB1ACE-78DE-4A8F-8A9D-6E10D7E9D6EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CEB1ACE-78DE-4A8F-8A9D-6E10D7E9D6EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CEB1ACE-78DE-4A8F-8A9D-6E10D7E9D6EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

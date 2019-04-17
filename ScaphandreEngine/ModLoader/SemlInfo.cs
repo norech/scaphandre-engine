@@ -1,9 +1,8 @@
 ﻿
-using ScaphandreEngine;
-using ScaphandreEngine.Util;
+using ScaphandreEngine.Utils;
 using System.Reflection;
 
-namespace SEML
+namespace ScaphandreEngine.ModLoader
 {
     public class SemlInfo
     {

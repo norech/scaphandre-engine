@@ -1,5 +1,4 @@
 ﻿
-using ScaphandreEngine;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-namespace SEML
+namespace ScaphandreEngine.ModLoader
 {
     public class SemlLoader
     {
@@ -59,15 +58,9 @@ namespace SEML
             return mods.GetOrDefault(mod, null);
         }
 
-        public List<string> LoadedModsList()
-        {
-            return new List<string>(mods.Keys);
-        }
+        public List<string> LoadedModsList => new List<string>(mods.Keys);
 
-        public int LoadedModsCount()
-        {
-            return mods.Count;
-        }
+        public int LoadedModsCount => mods.Count;
 
         public void LoadModsFromFolder(string modsFolder)
         {

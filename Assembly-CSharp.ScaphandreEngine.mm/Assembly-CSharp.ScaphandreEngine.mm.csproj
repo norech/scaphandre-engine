@@ -142,6 +142,10 @@
       <Project>{39d6e665-bcfd-4f82-a912-68460b533fc8}</Project>
       <Name>ScaphandreEngine</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ScaphandreInjector\ScaphandreInjector.csproj">
+      <Project>{6ceb1ace-78de-4a8f-8a9d-6e10d7e9d6ea}</Project>
+      <Name>ScaphandreInjector</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

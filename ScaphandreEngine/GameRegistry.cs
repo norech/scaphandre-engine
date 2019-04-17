@@ -1,5 +1,5 @@
 ﻿using ScaphandreEngine.Commands;
-using ScaphandreEngine.Events;
+using ScaphandreEngine.EventHandling;
 using System;
 using System.Collections.Generic;
 using System.Linq;

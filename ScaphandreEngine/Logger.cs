@@ -1,4 +1,4 @@
-﻿using SEML;
+﻿using ScaphandreEngine.ModLoader;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using Debug = UnityEngine.Debug;
 
-namespace ScaphandreEngine.ScaphandreEngine
+namespace ScaphandreEngine
 {
     public class Logger
     {

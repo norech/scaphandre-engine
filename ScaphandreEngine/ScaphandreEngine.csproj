@@ -34,34 +34,28 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="ScaphandreEngine\Commands\Command.cs" />
-    <Compile Include="ScaphandreEngine\Commands\CommandBase.cs" />
-    <Compile Include="ScaphandreEngine\Events\Event.cs" />
-    <Compile Include="ScaphandreEngine\Events\EventManager.cs" />
-    <Compile Include="ScaphandreEngine\Events\EventListener.cs" />
-    <Compile Include="ScaphandreEngine\Events\EventPriority.cs" />
-    <Compile Include="ScaphandreEngine\Events\ICancellableEvent.cs" />
-    <Compile Include="ScaphandreEngine\Events\ListenEventAttribute.cs" />
-    <Compile Include="ScaphandreEngine\GameRegistry.cs" />
-    <Compile Include="ScaphandreEngine\Logger.cs" />
-    <Compile Include="ScaphandreEngine\Scaphandre.cs" />
-    <Compile Include="ScaphandreEngine\Subnautica.cs" />
-    <Compile Include="ScaphandreEngine\Util\StringExtensions.cs" />
-    <Compile Include="ScaphandreInjector\CodeModification\DynamicExtender.cs" />
-    <Compile Include="ScaphandreInjector\CodeModification\TypeExtensions.cs" />
-    <Compile Include="ScaphandreInjector\Injector.cs" />
-    <Compile Include="ScaphandreEngine\Commands\CommandManager.cs" />
-    <Compile Include="ScaphandreInjector\Overlays\SceneOverlay.cs" />
-    <Compile Include="ScaphandreInjector\Overlays\LogOverlay.cs" />
-    <Compile Include="ScaphandreEngine\Menus\Menu.cs" />
-    <Compile Include="ScaphandreEngine\Menus\IngameMenu.cs" />
-    <Compile Include="ScaphandreEngine\Message.cs" />
-    <Compile Include="ScaphandreEngine\Mod.cs" />
-    <Compile Include="ScaphandreEngine\ModInfoAttribute.cs" />
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\CommandBase.cs" />
+    <Compile Include="EventHandling\Event.cs" />
+    <Compile Include="EventHandling\EventManager.cs" />
+    <Compile Include="EventHandling\EventListener.cs" />
+    <Compile Include="EventHandling\EventPriority.cs" />
+    <Compile Include="EventHandling\ListenEventAttribute.cs" />
+    <Compile Include="GameRegistry.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Scaphandre.cs" />
+    <Compile Include="Subnautica.cs" />
+    <Compile Include="Utils\StringExtensions.cs" />
+    <Compile Include="Commands\CommandManager.cs" />
+    <Compile Include="Menus\Menu.cs" />
+    <Compile Include="Menus\IngameMenu.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="Mod.cs" />
+    <Compile Include="ModInfoAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SEML\SemlInfo.cs" />
-    <Compile Include="SEML\SemlLoader.cs" />
-    <Compile Include="ScaphandreEngine\World.cs" />
+    <Compile Include="ModLoader\SemlInfo.cs" />
+    <Compile Include="ModLoader\SemlLoader.cs" />
+    <Compile Include="World.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
@@ -143,6 +137,5 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

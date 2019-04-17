@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ScaphandreEngine.Events
+namespace ScaphandreEngine.EventHandling
 {
     public abstract class Event
     {
@@ -14,7 +14,11 @@ namespace ScaphandreEngine.Events
             IsPropagationStopped = true;
         }
 
-        public abstract bool IsCancelled { get; set; }
-        public abstract bool IsCancelable { get; }
+        public virtual bool IsCancelled
+        {
+            get => false;
+            set => throw new NotImplementedException();
+        }
+        public virtual bool IsCancellable => false;
     }
 }

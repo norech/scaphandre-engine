@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ScaphandreEngine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace ScaphandreEngine.Events
+namespace ScaphandreEngine.EventHandling
 {
     internal static class EventManager
     {

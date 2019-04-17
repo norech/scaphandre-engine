@@ -1,6 +1,5 @@
-﻿using ScaphandreEngine.ScaphandreEngine;
-using SEML;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using ScaphandreEngine.ModLoader;
 
 namespace ScaphandreEngine
 {

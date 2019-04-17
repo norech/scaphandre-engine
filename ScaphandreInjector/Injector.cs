@@ -1,7 +1,7 @@
 ﻿using ScaphandreInjector.Overlays;
-using SEML;
 using System.IO;
 using UnityEngine;
+using ScaphandreEngine.ModLoader;
 
 namespace ScaphandreInjector
 {
@@ -24,7 +24,7 @@ namespace ScaphandreInjector
             
             Debug.Log("Loading mods...");
             SemlLoader.instance.LoadModsFromFolder(modsFolder);
-            Debug.Log("Loaded " + SemlLoader.instance.LoadedModsCount() + " mods");
+            Debug.Log("Loaded " + SemlLoader.instance.LoadedModsCount + " mods");
         }
 
         public static void CreateScaphandreEngineObjectTree()
@@ -35,6 +35,5 @@ namespace ScaphandreInjector
             overlays.AddComponent<LogOverlay>();
             overlays.AddComponent<SceneOverlay>();
         }
-
     }
 }

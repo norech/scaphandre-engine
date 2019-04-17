@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ScaphandreEngine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace ScaphandreEngine.Events
+namespace ScaphandreEngine.EventHandling
 {
     struct EventListener
     {
@@ -22,7 +23,7 @@ namespace ScaphandreEngine.Events
             Attributes = attribute;
             ListenedEvent = @params[0].ParameterType;
 
-            if (!ListenedEvent.IsAssignableFrom(typeof(Event)))
+            if (!typeof(Event).IsAssignableFrom(ListenedEvent))
                 throw new ArgumentException(ListenedEvent.FullName + " is not an event");
         }
 
