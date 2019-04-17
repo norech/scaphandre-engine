@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-$path = ${2%/}
+$path=${2%/}
 
 rm -r "$path/ScaphandreInstaller/bin/$1/Scaphandre";
 mkdir "$path/ScaphandreInstaller/bin/$1/Scaphandre";
