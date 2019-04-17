@@ -38,6 +38,8 @@
     <Compile Include="ScaphandreEngine\Commands\CommandBase.cs" />
     <Compile Include="ScaphandreEngine\GameRegistry.cs" />
     <Compile Include="ScaphandreEngine\Logger.cs" />
+    <Compile Include="ScaphandreEngine\Scaphandre.cs" />
+    <Compile Include="ScaphandreEngine\Subnautica.cs" />
     <Compile Include="ScaphandreEngine\Util\StringExtensions.cs" />
     <Compile Include="ScaphandreInjector\CodeModification\DynamicExtender.cs" />
     <Compile Include="ScaphandreInjector\CodeModification\TypeExtensions.cs" />

@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 [assembly: AssemblyCopyright("Copyright © Alexis Cheron. 2019")]
@@ -12,6 +13,9 @@ namespace ScaphandreEngine
 {
     class SharedAssemblyInfo
     {
+        private static string _informationalVersion = null;
+        private static string _version = null;
+
         public static string supportedSubnauticaVersion = "12/2018"; // december 2018
 
         public static bool IsSupportedVersion(string version)
@@ -22,6 +26,40 @@ namespace ScaphandreEngine
         public static bool IsSupportedVersion(DateTime version)
         {
             return string.Format("{0}/{1}", version.Month, version.Year) == supportedSubnauticaVersion;
+        }
+
+        /// <summary>
+        /// Returns Scaphandre informational version.
+        /// Unsupported in Assembly-CSharp.ScaphandreEngine.mm, use Injector.ScaphandreInformationalVersion instead.
+        /// </summary>
+        public static string GetScaphandreInformationalVersion()
+        {
+            if(_informationalVersion == null)
+            {
+                var attribute = Assembly.GetAssembly(typeof(SharedAssemblyInfo))
+                  .GetCustomAttributes(typeof(AssemblyInformationalVersionAttribute), true)
+                  .LastOrDefault();
+                _informationalVersion = ((AssemblyInformationalVersionAttribute)attribute).InformationalVersion;
+            }
+
+            return _informationalVersion;
+        }
+
+        /// <summary>
+        /// Returns Scaphandre version.
+        /// Unsupported in Assembly-CSharp.ScaphandreEngine.mm, use Injector.ScaphandreVersion instead.
+        /// </summary>
+        public static string GetScaphandreVersion()
+        {
+            if(_version == null)
+            {
+                var attribute = Assembly.GetAssembly(typeof(SharedAssemblyInfo))
+                  .GetCustomAttributes(typeof(AssemblyVersionAttribute), true)
+                  .LastOrDefault();
+                _version = ((AssemblyVersionAttribute)attribute).Version;
+            }
+
+            return _version;
         }
     }
 }
