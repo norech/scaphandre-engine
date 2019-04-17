@@ -59,12 +59,7 @@ namespace ScaphandreEngine
 
             public static void PostinitStep()
             {
-                Debug.Log("Registering events...");
-
-                Language.main.OnLanguageChanged += () => 
-                    EventManager.TriggerEvent(new LanguageChangeEvent(Language.main.GetCurrentLanguage()));
-
-                Debug.Log("Registered events.");
+                EventInitializer.Initialize();
             }
         }
     }

@@ -10,8 +10,12 @@ namespace ScaphandreInjector
     {
         public static GameObject injectorGO;
 
+        static bool isInitialized = false;
         public static void Initialize()
         {
+            if (isInitialized) return;
+            isInitialized = true;
+
             LogOverlay.ListenForLogs();
 
             Scaphandre.Initializer.PreinitStep();
@@ -25,8 +29,12 @@ namespace ScaphandreInjector
             Scaphandre.Initializer.InitStep(injectorGO);
         }
 
+        static bool isPostInitialized = false;
         public static void PostInitialize()
         {
+            if (isPostInitialized) return;
+            isPostInitialized = true;
+
             Scaphandre.Initializer.PostinitStep();
         }
 

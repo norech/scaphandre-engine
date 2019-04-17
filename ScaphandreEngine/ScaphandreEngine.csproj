@@ -41,6 +41,7 @@
     <Compile Include="EventHandling\EventListener.cs" />
     <Compile Include="EventHandling\EventPriority.cs" />
     <Compile Include="EventHandling\ListenEventAttribute.cs" />
+    <Compile Include="Events\EventInitializer.cs" />
     <Compile Include="Events\LanguageChangeEvent.cs" />
     <Compile Include="GameRegistry.cs" />
     <Compile Include="Logger.cs" />
