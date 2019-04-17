@@ -1,4 +1,4 @@
-# Scaphandre Engine
+# Scaphandre Engine [![Build Status](https://travis-ci.com/norech/scaphandre-engine.svg?branch=master)](https://travis-ci.com/norech/scaphandre-engine)
 
 A Subnautica moddding engine.
 
