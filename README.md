@@ -1,6 +1,6 @@
 # Scaphandre Engine [![Build Status](https://travis-ci.com/norech/scaphandre-engine.svg?branch=master)](https://travis-ci.com/norech/scaphandre-engine)
 
-A Subnautica moddding engine.
+A Subnautica modding engine.
 
 ## Install Scaphandre Engine
 See [this wiki section to install Scaphandre Engine](https://github.com/Norech/scaphandre-engine/wiki/Getting-Started#install-scaphandre-engine).
