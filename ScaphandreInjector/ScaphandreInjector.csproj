@@ -102,6 +102,7 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="EventDelegates\LanguageDelegates.cs" />
     <Compile Include="Injector.cs" />
     <Compile Include="Overlays\LogOverlay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,5 +114,6 @@
       <Name>ScaphandreEngine</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

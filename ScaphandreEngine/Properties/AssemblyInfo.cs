@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Scaphandre Engine")]
@@ -8,6 +9,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("Scaphandre Engine")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+
+[assembly: InternalsVisibleTo("ScaphandreInjector")]
+[assembly: InternalsVisibleTo("Assembly-CSharp.ScaphandreEngine.mm")]
 
 [assembly: ComVisible(false)]
 
