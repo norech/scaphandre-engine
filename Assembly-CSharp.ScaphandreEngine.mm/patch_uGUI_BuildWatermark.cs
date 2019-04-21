@@ -1,5 +1,4 @@
-﻿#pragma warning disable CS0626 // orig_ method is marked external and has no attributes on it.
-using MonoMod;
+﻿using MonoMod;
 using ScaphandreEngine;
 using UnityEngine.UI;
 

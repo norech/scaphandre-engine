@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>Assembly-CSharp.ScaphandreEngine.mm.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>Assembly-CSharp.ScaphandreEngine.mm.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\SharedAssemblyInfo.cs">
@@ -38,7 +40,9 @@
     </Compile>
     <Compile Include="patch_DevConsole.cs" />
     <Compile Include="patch_GameInput.cs" />
+    <Compile Include="patch_Language.cs" />
     <Compile Include="patch_MainMenuController.cs" />
+    <Compile Include="patch_CellManager.cs" />
     <Compile Include="patch_SystemsSpawner.cs" />
     <Compile Include="patch_uGUI_BuildWatermark.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,6 +153,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assembly-CSharp.ScaphandreEngine.mm.ruleset" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

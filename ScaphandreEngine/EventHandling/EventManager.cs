@@ -8,7 +8,7 @@ using System.Text;
 
 namespace ScaphandreEngine.EventHandling
 {
-    internal static class EventManager
+    public static class EventManager
     {
         static Dictionary<Type, List<EventListener>> events = new Dictionary<Type, List<EventListener>>();
 
@@ -37,7 +37,7 @@ namespace ScaphandreEngine.EventHandling
             events[listener.ListenedEvent] = listeners;
         }
 
-        public static void TriggerEvent(Event e)
+        public static Event TriggerEvent(Event e)
         {
             var listeners = events.GetOrDefault(e.GetType(), new List<EventListener>());
 
@@ -46,6 +46,8 @@ namespace ScaphandreEngine.EventHandling
                 listener.Call(e);
                 if (e.IsPropagationStopped) break;
             }
+
+            return e;
         }
     }
 }

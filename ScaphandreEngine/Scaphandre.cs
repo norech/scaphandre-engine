@@ -43,9 +43,8 @@ namespace ScaphandreEngine
         }
 
         public static bool SupportsGameVersion => SharedAssemblyInfo.IsSupportedVersion(Subnautica.Version);
-
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        public sealed class Initializer
+        
+        internal sealed class Initializer
         {
             public static void PreinitStep()
             {
@@ -59,7 +58,7 @@ namespace ScaphandreEngine
 
             public static void PostinitStep()
             {
-                EventInitializer.Initialize();
+                //
             }
         }
     }

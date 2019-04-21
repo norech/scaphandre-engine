@@ -1,6 +1,4 @@
-﻿#pragma warning disable CS0626 // orig_ method is marked external and has no attributes on it.
-
-using ScaphandreInjector;
+﻿using ScaphandreInjector;
 using UnityEngine;
 
 class patch_SystemsSpawner : SystemsSpawner

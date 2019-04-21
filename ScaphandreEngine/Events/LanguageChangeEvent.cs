@@ -4,7 +4,7 @@ namespace ScaphandreEngine.Events
 {
     public class LanguageChangeEvent : Event
     {
-        internal LanguageChangeEvent(string oldLanguage, string newLanguage)
+        public LanguageChangeEvent(string oldLanguage, string newLanguage)
         {
             PreviousLanguage = oldLanguage;
             Language = newLanguage;
@@ -12,5 +12,7 @@ namespace ScaphandreEngine.Events
 
         public string PreviousLanguage { get; }
         public string Language { get; }
+
+        public override bool IsCancellable => (PreviousLanguage != null);
     }
 }

@@ -14,11 +14,24 @@ namespace ScaphandreEngine.Events
             IsPropagationStopped = true;
         }
 
+        private bool _isCancelled = false;
         public virtual bool IsCancelled
         {
-            get => false;
-            set => throw new NotImplementedException();
+            get {
+                if (!IsCancellable)
+                    return false;
+
+                return _isCancelled;
+            }
+            set
+            {
+                if (!IsCancellable)
+                    throw new System.InvalidOperationException("Event is currently not cancellable");
+
+                _isCancelled = value;
+            }
         }
+
         public virtual bool IsCancellable => false;
     }
 }

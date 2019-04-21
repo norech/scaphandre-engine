@@ -36,7 +36,14 @@ namespace ScaphandreEngine.EventHandling
 
         public void Call(Event @event)
         {
-            methodInfo.FastInvoke(instance, @event);
+            try
+            {
+                methodInfo.FastInvoke(instance, @event);
+            }
+            catch (Exception ex)
+            {
+                mod.Logger.Error(ex);
+            }
         }
     }
 }
