@@ -36,7 +36,9 @@
     </Compile>
     <Compile Include="CommandHandling\Command.cs" />
     <Compile Include="CommandHandling\CommandBase.cs" />
+    <Compile Include="Entities\CreatureTraits.cs" />
     <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\CreatureWrapper.cs" />
     <Compile Include="Events\Event.cs" />
     <Compile Include="EventHandling\EventManager.cs" />
     <Compile Include="EventHandling\EventListener.cs" />
