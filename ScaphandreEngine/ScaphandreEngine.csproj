@@ -36,13 +36,14 @@
     </Compile>
     <Compile Include="CommandHandling\Command.cs" />
     <Compile Include="CommandHandling\CommandBase.cs" />
+    <Compile Include="Events\EntitySpawnEvent.cs" />
     <Compile Include="Events\Event.cs" />
+    <Compile Include="Events\LanguageChangeEvent.cs" />
+    <Compile Include="Events\StoryGoalCompletedEvent.cs" />
     <Compile Include="EventHandling\EventManager.cs" />
     <Compile Include="EventHandling\EventListener.cs" />
     <Compile Include="EventHandling\EventPriority.cs" />
     <Compile Include="EventHandling\ListenEventAttribute.cs" />
-    <Compile Include="Events\LanguageChangeEvent.cs" />
-    <Compile Include="Events\EntitySpawnEvent.cs" />
     <Compile Include="GameRegistry.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Scaphandre.cs" />

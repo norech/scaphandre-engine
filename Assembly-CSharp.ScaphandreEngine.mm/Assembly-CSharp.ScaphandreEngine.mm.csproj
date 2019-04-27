@@ -46,6 +46,7 @@
     <Compile Include="patch_SystemsSpawner.cs" />
     <Compile Include="patch_uGUI_BuildWatermark.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Story\patch_StoryGoalManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
