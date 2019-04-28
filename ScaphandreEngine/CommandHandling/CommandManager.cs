@@ -114,13 +114,21 @@ namespace ScaphandreEngine
 
             var command = Commands.GetOrDefault(commandName, null);
 
-            if (args != null)
+            try
             {
-                command.Execute(args);
+                if (args != null)
+                {
+                    command.Execute(args);
+                }
+                else
+                {
+                    command.Execute(new string[] { });
+                }
             }
-            else
+            catch (Exception ex)
             {
-                command.Execute(new string[] { });
+                command.Mod.Logger.Error(ex);
+                return false;
             }
             return true;
         }

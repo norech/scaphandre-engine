@@ -12,6 +12,8 @@ namespace ScaphandreEngine.CommandHandling
         [EditorBrowsable(EditorBrowsableState.Never)]
         void Setup(Mod mod);
 
+        Mod Mod { get; }
+
         string GetName();
         void Execute(string[] args);
     }
