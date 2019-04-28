@@ -9,8 +9,10 @@ namespace ScaphandreEngine.CommandHandling
         [EditorBrowsable(EditorBrowsableState.Never)]
         public void Setup(Mod mod)
         {
-            // Kept for a later usage
+            Mod = mod;
         }
+
+        public Mod Mod { get; private set; }
 
         public abstract string GetName();
         public abstract void Execute(string[] args);

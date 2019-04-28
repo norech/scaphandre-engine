@@ -1,5 +1,4 @@
-﻿using ScaphandreEngine.Entities;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ScaphandreEngine.Events
 {

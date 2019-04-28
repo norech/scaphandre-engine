@@ -1,4 +1,6 @@
-# Scaphandre Engine [![Build Status](https://travis-ci.com/norech/scaphandre-engine.svg?branch=master)](https://travis-ci.com/norech/scaphandre-engine)
+# Scaphandre Engine
+
+[![Build Status](https://travis-ci.com/norech/scaphandre-engine.svg?branch=master)](https://travis-ci.com/norech/scaphandre-engine) ![GitHub prerelease](https://img.shields.io/github/release-pre/norech/scaphandre-engine.svg?label=latest%20prerelease) ![GitHub release](https://img.shields.io/github/release/norech/scaphandre-engine.svg?label=latest%20release)
 
 A Subnautica modding engine.
 
