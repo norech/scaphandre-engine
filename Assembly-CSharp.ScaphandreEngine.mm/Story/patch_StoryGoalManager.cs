@@ -6,16 +6,15 @@ namespace Story
 {
     class patch_StoryGoalManager : StoryGoalManager
     {
-        public extern bool origin_OnGoalComplete(string key);
-
-        [MonoModReplace]
+        public extern bool orig_OnGoalComplete(string key);
         private new bool OnGoalComplete(string key)
         {
-            if(EventManager.TriggerEvent(new StoryGoalCompletedEvent(key)).IsCancelled) {
+            if (EventManager.TriggerEvent(new StoryGoalCompletedEvent(key)).IsCancelled)
+            {
                 return false;
             }
 
-            return origin_OnGoalComplete(key);
+            return orig_OnGoalComplete(key);
         }
     }
 

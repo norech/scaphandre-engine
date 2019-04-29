@@ -10,5 +10,7 @@ namespace ScaphandreEngine.Events
         }
 
         public GameObject Entity { get; }
+
+        public override bool IsCancellable => false;
     }
 }

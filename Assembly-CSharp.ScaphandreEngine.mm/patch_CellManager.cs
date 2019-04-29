@@ -5,9 +5,7 @@ using UnityEngine;
 
 class patch_CellManager : CellManager
 {
-    [MonoModConstructor]
-    public patch_CellManager(LargeWorldStreamer streamer, LargeWorldEntitySpawner spawner)
-        : base(streamer, spawner)
+    public patch_CellManager(LargeWorldStreamer streamer, LargeWorldEntitySpawner spawner) : base(streamer, spawner)
     {
         //
     }
@@ -16,7 +14,7 @@ class patch_CellManager : CellManager
     private new void RegisterEntity(LargeWorldEntity entity)
     {
         orig_RegisterEntity(entity);
-        if(EventManager.TriggerEvent(new EntitySpawnEvent(entity.gameObject)).IsCancelled)
+        if (EventManager.TriggerEvent(new EntitySpawnEvent(entity.gameObject)).IsCancelled)
         {
             UnregisterEntity(entity);
         }

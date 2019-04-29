@@ -41,6 +41,12 @@
     <Compile Include="Events\EntitySpawnEvent.cs" />
     <Compile Include="Events\Event.cs" />
     <Compile Include="Events\LanguageChangeEvent.cs" />
+    <Compile Include="Events\PlayerDeathEvent.cs" />
+    <Compile Include="Events\PlayerDepthClassChangedEvent.cs" />
+    <Compile Include="Events\PlayerEnterWaterEvent.cs" />
+    <Compile Include="Events\PlayerEquipmentChangedEvent.cs" />
+    <Compile Include="Events\PlayerExitWaterEvent.cs" />
+    <Compile Include="Events\PlayerRespawnEvent.cs" />
     <Compile Include="Events\StoryGoalCompletedEvent.cs" />
     <Compile Include="EventHandling\EventManager.cs" />
     <Compile Include="EventHandling\EventListener.cs" />
