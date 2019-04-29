@@ -14,5 +14,10 @@ class patch_uGUI_BuildWatermark : uGUI_BuildWatermark
 
         component.text = Language.main.GetFormat("EarlyAccessWatermarkFormat", dateTimeOfBuild, plasticChangeSetOfBuild)
             + "\nScaphandre Engine v" + Scaphandre.Version;
+
+        if(!Scaphandre.IsStableRelease)
+        {
+            component.text += "\n<color=#FF00007F>You're using an unstable release of Scaphandre!</color>";
+        }
     }
 }

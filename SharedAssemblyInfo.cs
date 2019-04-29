@@ -18,6 +18,8 @@ namespace ScaphandreEngine
 
         public static string supportedSubnauticaVersion = "12/2018"; // december 2018
 
+        public static bool isStableRelease = false;
+
         public static bool IsSupportedVersion(string version)
         {
             return version == supportedSubnauticaVersion;

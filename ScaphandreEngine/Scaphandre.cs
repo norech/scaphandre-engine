@@ -43,7 +43,8 @@ namespace ScaphandreEngine
         }
 
         public static bool SupportsGameVersion => SharedAssemblyInfo.IsSupportedVersion(Subnautica.Version);
-        
+        public static bool IsStableRelease => SharedAssemblyInfo.isStableRelease;
+
         internal sealed class Initializer
         {
             public static void PreinitStep()
