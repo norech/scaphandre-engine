@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using ScaphandreEngine.ModLoader;
+using ScaphandreEngine.Scheduling;
 
 namespace ScaphandreEngine
 {
@@ -21,6 +22,20 @@ namespace ScaphandreEngine
                 }
 
                 return logger;
+            }
+        }
+
+        private Scheduler scheduler;
+        public Scheduler Scheduler
+        {
+            get
+            {
+                if (scheduler == null)
+                {
+                    scheduler = new Scheduler(this);
+                }
+
+                return scheduler;
             }
         }
 

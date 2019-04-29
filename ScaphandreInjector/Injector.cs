@@ -24,6 +24,8 @@ namespace ScaphandreInjector
             injectorGO = new GameObject("___SCAPHANDRE_ENGINE__GO");
             Object.DontDestroyOnLoad(injectorGO);
             CreateScaphandreEngineObjectTree();
+
+
             Debug.Log("Added global Scaphandre Engine object");
 
             Scaphandre.Initializer.InitStep(injectorGO);
@@ -40,6 +42,8 @@ namespace ScaphandreInjector
 
         public static void CreateScaphandreEngineObjectTree()
         {
+            injectorGO.AddComponent<SemlBackgroundWorker>();
+
             var overlays = new GameObject("___ScaphandreOverlays__GO");
             overlays.transform.parent = injectorGO.transform;
 

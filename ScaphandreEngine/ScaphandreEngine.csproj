@@ -47,7 +47,10 @@
     <Compile Include="Events\EntitySpawnEvent.cs" />
     <Compile Include="GameRegistry.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="ModLoader\SemlBackgroundWorker.cs" />
     <Compile Include="Scaphandre.cs" />
+    <Compile Include="Scheduling\Scheduler.cs" />
+    <Compile Include="Scheduling\Task.cs" />
     <Compile Include="Subnautica.cs" />
     <Compile Include="Utils\StringExtensions.cs" />
     <Compile Include="CommandHandling\CommandManager.cs" />

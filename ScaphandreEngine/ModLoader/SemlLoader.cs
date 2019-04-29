@@ -12,7 +12,7 @@ namespace ScaphandreEngine.ModLoader
     {
         public static SemlLoader instance = new SemlLoader();
 
-        private static Dictionary<string, SemlInfo> mods = new Dictionary<string, SemlInfo>();
+        internal static Dictionary<string, SemlInfo> mods = new Dictionary<string, SemlInfo>();
 
         internal SemlLoader() {
         }
