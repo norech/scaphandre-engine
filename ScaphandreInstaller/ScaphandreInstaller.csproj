@@ -145,7 +145,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo.png" />
+    <None Include="logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="scaphandre_icon.ico" />
