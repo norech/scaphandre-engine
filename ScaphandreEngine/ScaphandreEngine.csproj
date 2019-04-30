@@ -54,8 +54,8 @@
     <Compile Include="Subnautica.cs" />
     <Compile Include="Utils\StringExtensions.cs" />
     <Compile Include="CommandHandling\CommandManager.cs" />
-    <Compile Include="Menus\Menu.cs" />
-    <Compile Include="Menus\IngameMenu.cs" />
+    <Compile Include="UI\Menus\Menu.cs" />
+    <Compile Include="UI\Menus\IngameMenu.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="ModInfoAttribute.cs" />

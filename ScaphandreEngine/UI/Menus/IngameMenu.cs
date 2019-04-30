@@ -1,6 +1,6 @@
 ﻿using BaseIngameMenu = IngameMenu;
 
-namespace ScaphandreEngine.Menus
+namespace ScaphandreEngine.UI.Menus
 {
     public class IngameMenu : Menu
     {
