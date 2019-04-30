@@ -52,6 +52,7 @@
     <Compile Include="Scheduling\Scheduler.cs" />
     <Compile Include="Scheduling\Task.cs" />
     <Compile Include="Subnautica.cs" />
+    <Compile Include="UI\WorldMarker.cs" />
     <Compile Include="Utils\StringExtensions.cs" />
     <Compile Include="CommandHandling\CommandManager.cs" />
     <Compile Include="UI\Menus\Menu.cs" />
