@@ -1,7 +1,10 @@
-﻿using System;
+﻿using ScaphandreEngine.ModLoader;
+using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 namespace ScaphandreEngine.Scheduling
 {
@@ -29,6 +32,21 @@ namespace ScaphandreEngine.Scheduling
             tasks.Add(task);
 
             return task;
+        }
+
+        public Coroutine StartCoroutine(IEnumerator routine)
+        {
+            return SemlBackgroundWorker.main.StartCoroutine(routine);
+        }
+
+        public void StopCoroutine(Coroutine routine)
+        {
+            SemlBackgroundWorker.main.StopCoroutine(routine);
+        }
+
+        public void StopCoroutine(IEnumerator routine)
+        {
+            SemlBackgroundWorker.main.StopCoroutine(routine);
         }
 
         internal void Tick()

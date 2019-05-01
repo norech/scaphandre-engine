@@ -42,7 +42,7 @@ namespace ScaphandreInjector
 
         public static void CreateScaphandreEngineObjectTree()
         {
-            injectorGO.AddComponent<SemlBackgroundWorker>();
+            SemlBackgroundWorker.main = injectorGO.AddComponent<SemlBackgroundWorker>();
 
             var overlays = new GameObject("___ScaphandreOverlays__GO");
             overlays.transform.parent = injectorGO.transform;
