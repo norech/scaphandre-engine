@@ -51,12 +51,12 @@ namespace ScaphandreEngine.Scheduling
 
         internal void Tick()
         {
-            foreach(var task in tasks)
+            var toRemove = new List<Task>();
+            foreach (var task in tasks)
             {
-
                 if (task.Cancelled)
                 {
-                    tasks.Remove(task);
+                    toRemove.Add(task);
                     continue;
                 }
 
@@ -66,6 +66,11 @@ namespace ScaphandreEngine.Scheduling
                     task.Execute();
                     task.ResetTimers();
                 }
+            }
+
+            foreach(var task in toRemove)
+            {
+                tasks.Remove(task);
             }
         }
     }
