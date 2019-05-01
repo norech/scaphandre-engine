@@ -22,6 +22,7 @@ namespace ScaphandreInjector
 
             Debug.Log("Adding global Scaphandre Engine object...");
             injectorGO = new GameObject("___SCAPHANDRE_ENGINE__GO");
+            injectorGO.AddComponent<SceneCleanerPreserve>();
             Object.DontDestroyOnLoad(injectorGO);
             CreateScaphandreEngineObjectTree();
 
