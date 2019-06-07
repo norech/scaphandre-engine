@@ -38,17 +38,17 @@ namespace ScaphandreEngine.Scheduling
 
         public Coroutine StartCoroutine(IEnumerator routine)
         {
-            return SemlBackgroundWorker.main.StartCoroutine(routine);
+            return SemlWorker.main.StartCoroutine(routine);
         }
 
         public void StopCoroutine(Coroutine routine)
         {
-            SemlBackgroundWorker.main.StopCoroutine(routine);
+            SemlWorker.main.StopCoroutine(routine);
         }
 
         public void StopCoroutine(IEnumerator routine)
         {
-            SemlBackgroundWorker.main.StopCoroutine(routine);
+            SemlWorker.main.StopCoroutine(routine);
         }
 
         internal void Tick()
