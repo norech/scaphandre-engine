@@ -36,28 +36,23 @@ namespace ScaphandreEngine.Scheduling
         public TaskType Type { get; }
 
         protected bool alreadyExecuted = false;
-        protected float timeSinceStart = 0;
-        protected float timeSinceLastExec = 0;
+        protected float timeSincePrevious = 0;
 
         internal void Tick()
         {
-            timeSinceStart += UnityEngine.Time.deltaTime;
-            timeSinceLastExec += UnityEngine.Time.deltaTime;
+            timeSincePrevious += UnityEngine.Time.deltaTime;
         }
 
-        internal void ResetTimers()
-        {
-            timeSinceStart = 0;
-            timeSinceLastExec = 0;
-        }
+        internal bool CanExecuteNow => alreadyExecuted ? (timeSincePrevious > Interval) : (timeSincePrevious > Delay);
 
-        internal bool CanExecuteNow => alreadyExecuted ? timeSinceLastExec > Interval : timeSinceStart > Delay;
         internal void Execute()
         {
             alreadyExecuted = true;
             action();
 
             if (Type == TaskType.OneShot) Cancelled = true;
+
+            timeSincePrevious = 0;
         }
 
     }

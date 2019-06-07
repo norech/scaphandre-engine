@@ -10,6 +10,8 @@ namespace ScaphandreEngine.Scheduling
 {
     public class Scheduler
     {
+        internal static void OnModTick(SemlInfo semlInfo) => semlInfo.mod.Scheduler.Tick();
+
         private Mod mod;
         private List<Task> tasks = new List<Task>();
 
@@ -51,12 +53,12 @@ namespace ScaphandreEngine.Scheduling
 
         internal void Tick()
         {
-            var toRemove = new List<Task>();
+            var cancelledTasks = new List<Task>();
             foreach (var task in tasks)
             {
                 if (task.Cancelled)
                 {
-                    toRemove.Add(task);
+                    cancelledTasks.Add(task);
                     continue;
                 }
 
@@ -64,11 +66,10 @@ namespace ScaphandreEngine.Scheduling
                 if(task.CanExecuteNow)
                 {
                     task.Execute();
-                    task.ResetTimers();
                 }
             }
 
-            foreach(var task in toRemove)
+            foreach(var task in cancelledTasks)
             {
                 tasks.Remove(task);
             }
