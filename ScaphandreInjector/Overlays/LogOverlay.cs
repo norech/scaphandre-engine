@@ -40,6 +40,7 @@ namespace ScaphandreInjector.Overlays
             {
                 alignment = TextAnchor.LowerLeft,
                 fontSize = 18,
+                wordWrap = true
             };
 
             textStyle.richText = false;

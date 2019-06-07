@@ -10,14 +10,13 @@ namespace ScaphandreEngine.Scheduling
 {
     public class Scheduler
     {
-        internal static void OnModTick(SemlInfo semlInfo) => semlInfo.mod.Scheduler.Tick();
-
         private Mod mod;
         private List<Task> tasks = new List<Task>();
 
         internal Scheduler(Mod mod)
         {
             this.mod = mod;
+            mod.Worker.ScheduleOnTick(mod.Scheduler.Tick);
         }
 
         public Task ScheduleDelayed(Action action, float delay)
@@ -38,17 +37,17 @@ namespace ScaphandreEngine.Scheduling
 
         public Coroutine StartCoroutine(IEnumerator routine)
         {
-            return SemlWorker.main.StartCoroutine(routine);
+            return mod.Worker.StartCoroutine(routine);
         }
 
         public void StopCoroutine(Coroutine routine)
         {
-            SemlWorker.main.StopCoroutine(routine);
+            mod.Worker.StopCoroutine(routine);
         }
 
         public void StopCoroutine(IEnumerator routine)
         {
-            SemlWorker.main.StopCoroutine(routine);
+            mod.Worker.StopCoroutine(routine);
         }
 
         internal void Tick()

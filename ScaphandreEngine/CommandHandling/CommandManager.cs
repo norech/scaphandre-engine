@@ -46,6 +46,8 @@ namespace ScaphandreEngine
 
             }
 
+            var successfullyRegisteredNames = new List<string>();
+
             var registeredNames = new string[]
                {
                    commandName,
@@ -57,12 +59,17 @@ namespace ScaphandreEngine
                 if (!Commands.ContainsKey(name))
                 {
                     Commands.Add(name, command);
-                    Debug.Log("Registered '" + name + "' command.");
+                    successfullyRegisteredNames.Add(name);
                 }
                 else
                 {
                     Debug.LogError("A command named '" + name + "' is already registered. Ignoring.");
                 }
+            }
+
+            if(successfullyRegisteredNames.Count > 0)
+            {
+                Debug.Log("Successfully registered '" + string.Join("', '", successfullyRegisteredNames.ToArray()) + "' commands for " + command.GetType().Name + " class.");
             }
         }
 

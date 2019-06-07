@@ -1,15 +1,36 @@
 ﻿using System.ComponentModel;
 using ScaphandreEngine.ModLoader;
 using ScaphandreEngine.Scheduling;
+using UnityEngine;
 
 namespace ScaphandreEngine
 {
     public abstract class Mod
     {
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        public void Setup()
+        public static T GetMod<T>() where T : Mod
         {
+            var semlInfo = SemlLoader.GetSemlInfo(typeof(T));
+
+            if (semlInfo == null) return null;
+
+            return (T)semlInfo.mod;
         }
+
+        internal void Setup()
+        {
+            if (Worker == null)
+            {
+                Worker = SemlWorker.root.AddChildWorker(Info.id);
+            }
+            else
+            {
+                Worker.enabled = true;
+            }
+
+            Initialize();
+        }
+
+        internal SemlWorker Worker { get; set; }
 
         private Logger logger;
         public Logger Logger
@@ -39,24 +60,9 @@ namespace ScaphandreEngine
             }
         }
 
-        public ModInfoAttribute Info
-        {
-            get
-            {
-                return SemlLoader.GetSemlInfo(this).info;
-            }
-        }
+        public ModInfoAttribute Info => SemlLoader.GetSemlInfo(this).info;
 
         public abstract void Initialize();
-
-        public static T GetMod<T>() where T : Mod
-        {
-            var semlInfo = SemlLoader.GetSemlInfo(typeof(T));
-
-            if (semlInfo == null) return null;
-
-            return (T)semlInfo.mod;
-        }
 
     }
 }

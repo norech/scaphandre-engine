@@ -18,7 +18,7 @@ namespace ScaphandreEngine
 
         public static void PostinitStep()
         {
-            SemlWorker.ScheduleOnModTick(Scheduler.OnModTick);
+            //
         }
     }
 }

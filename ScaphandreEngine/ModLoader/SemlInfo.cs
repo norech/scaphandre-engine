@@ -8,8 +8,6 @@ namespace ScaphandreEngine.ModLoader
     {
         internal SemlInfo(string file, Assembly assembly, Mod mod, ModInfoAttribute info)
         {
-            id = info.id ?? info.name.ToAlphabetic();
-
             this.file = file;
             this.assembly = assembly;
             this.mod = mod;

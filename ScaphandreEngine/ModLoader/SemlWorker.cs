@@ -1,26 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
 namespace ScaphandreEngine.ModLoader
 {
     internal class SemlWorker : MonoBehaviour
     {
-        public static SemlWorker main;
+        public static SemlWorker root;
 
-        private static List<Action> tickActions = new List<Action>();
-        private static List<Action<SemlInfo>> modTickActions = new List<Action<SemlInfo>>();
+        private List<Action> tickActions = new List<Action>();
 
-        public static void ScheduleOnTick(Action action)
+        public void ScheduleOnTick(Action action)
         {
             tickActions.Add(action);
         }
 
-        public static void ScheduleOnModTick(Action<SemlInfo> action)
+        internal SemlWorker AddChildWorker(string name)
         {
-            modTickActions.Add(action);
+            var child = new GameObject("___SCAPHAN__WKR___;" + name, typeof(SemlWorker));
+            child.transform.parent = gameObject.transform;
+            return child.GetComponent<SemlWorker>();
         }
 
         public void Update()
@@ -29,17 +28,6 @@ namespace ScaphandreEngine.ModLoader
             {
                 if (tickAction == null) continue;
                 tickAction();
-            }
-
-            foreach (var modTickAction in modTickActions)
-            {
-                if (modTickAction == null) continue;
-                foreach (var pair in SemlLoader.mods)
-                {
-                    var semlInfo = pair.Value;
-
-                    modTickAction(semlInfo);
-                }
             }
         }
     }

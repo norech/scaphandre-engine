@@ -112,7 +112,21 @@ namespace ScaphandreEngine.ModLoader
 
                 if (modInfo.id == null)
                 {
-                    modInfo.id = FormatID(modInfo.name);
+                    string id;
+                    if(modInfo.author != null)
+                    {
+                        id = FormatID(modInfo.author) + "." + FormatID(modInfo.name);
+                    }
+                    else
+                    {
+                        id = FormatID(modInfo.name);
+                    }
+                    modInfo.id = id;
+
+                    Debug.LogWarning(
+                        "No ID specified for '" + modInfo.name + "' mod. Assumed '" + id + "'. " +
+                        "It is recommended to specify an ID manually for compatibility reasons but this should NOT break the mod."
+                    );
                 }
                 else
                 {
@@ -137,8 +151,8 @@ namespace ScaphandreEngine.ModLoader
                 mods.Add(modInfo.id, semlInfo);
                 Debug.Log("Loaded '" + semlInfo.id + "' mod.");
 
-                // Initializing should be done at the end
-                mod.Initialize();
+                // Mod setup should be done at the end
+                mod.Setup();
             }
             catch (Exception ex)
             {
