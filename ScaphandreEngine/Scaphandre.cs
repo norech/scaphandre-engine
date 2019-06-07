@@ -1,6 +1,7 @@
 ﻿using ScaphandreEngine.EventHandling;
 using ScaphandreEngine.Events;
 using ScaphandreEngine.ModLoader;
+using ScaphandreEngine.Scheduling;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,23 +45,5 @@ namespace ScaphandreEngine
 
         public static bool SupportsGameVersion => SharedAssemblyInfo.IsSupportedVersion(Subnautica.Version);
         public static bool IsStableRelease => SharedAssemblyInfo.isStableRelease;
-
-        internal sealed class Initializer
-        {
-            public static void PreinitStep()
-            {
-                //
-            }
-
-            public static void InitStep(GameObject @object)
-            {
-                SemlLoader.Initialize();
-            }
-
-            public static void PostinitStep()
-            {
-                //
-            }
-        }
     }
 }

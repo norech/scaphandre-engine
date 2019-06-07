@@ -221,6 +221,7 @@ namespace ScaphandreInstaller
                 var moddingApiFiles = new string[]
                 {
                     "Assembly-CSharp.dll",
+                    "Assembly-CSharp-firstpass.dll",
                     "ScaphandreEngine.dll",
                     "UnityEngine.dll",
                     "UnityEngine.Networking.dll",

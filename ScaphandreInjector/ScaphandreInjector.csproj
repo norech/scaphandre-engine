@@ -113,6 +113,10 @@
       <Project>{39d6e665-bcfd-4f82-a912-68460b533fc8}</Project>
       <Name>ScaphandreEngine</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ScaphandreInjector.CodeModification\ScaphandreInjector.CodeModification.csproj">
+      <Project>{939ea587-3e65-4106-8a04-80e0388c93a4}</Project>
+      <Name>ScaphandreInjector.CodeModification</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

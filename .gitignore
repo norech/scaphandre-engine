@@ -5,3 +5,6 @@ packages
 */bin/*
 */obj/*
 scaphandre-installer.zip
+ExampleMods/*/bin
+ExampleMods/*/obj
+ExampleMods/ScaphandreModdingAPI

@@ -46,8 +46,9 @@
     <Compile Include="Events\LanguageChangeEvent.cs" />
     <Compile Include="Events\EntitySpawnEvent.cs" />
     <Compile Include="GameRegistry.cs" />
+    <Compile Include="Initializer.cs" />
     <Compile Include="Logger.cs" />
-    <Compile Include="ModLoader\SemlBackgroundWorker.cs" />
+    <Compile Include="ModLoader\SemlWorker.cs" />
     <Compile Include="Scaphandre.cs" />
     <Compile Include="Scheduling\Scheduler.cs" />
     <Compile Include="Scheduling\Task.cs" />

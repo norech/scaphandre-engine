@@ -18,7 +18,7 @@ namespace ScaphandreInjector
 
             LogOverlay.ListenForLogs();
 
-            Scaphandre.Initializer.PreinitStep();
+            Initializer.PreinitStep();
 
             Debug.Log("Adding global Scaphandre Engine object...");
             injectorGO = new GameObject("___SCAPHANDRE_ENGINE__GO");
@@ -29,7 +29,7 @@ namespace ScaphandreInjector
 
             Debug.Log("Added global Scaphandre Engine object");
 
-            Scaphandre.Initializer.InitStep(injectorGO);
+            Initializer.InitStep(injectorGO);
         }
 
         static bool isPostInitialized = false;
@@ -38,12 +38,12 @@ namespace ScaphandreInjector
             if (isPostInitialized) return;
             isPostInitialized = true;
 
-            Scaphandre.Initializer.PostinitStep();
+            Initializer.PostinitStep();
         }
 
         public static void CreateScaphandreEngineObjectTree()
         {
-            SemlBackgroundWorker.main = injectorGO.AddComponent<SemlBackgroundWorker>();
+            SemlWorker.main = injectorGO.AddComponent<SemlWorker>();
 
             var overlays = new GameObject("___ScaphandreOverlays__GO");
             overlays.transform.parent = injectorGO.transform;

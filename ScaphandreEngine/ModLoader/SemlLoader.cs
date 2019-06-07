@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 namespace ScaphandreEngine.ModLoader
@@ -109,15 +110,31 @@ namespace ScaphandreEngine.ModLoader
                     return;
                 }
 
-                if(mods.ContainsKey(modInfo.name))
+                if (modInfo.id == null)
                 {
-                    Debug.LogError("Another mod exists with the name '" + modInfo.name + "'! Skipping mod.");
+                    modInfo.id = FormatID(modInfo.name);
+                }
+                else
+                {
+                    var id = modInfo.id;
+                    var formattedId = FormatID(id);
+
+                    if (formattedId != id)
+                    {
+                        Debug.LogError("Invalid mod id: " + id + " - use something like this: " + formattedId + "! Skipping mod.");
+                        return;
+                    }
+                }
+
+                if (mods.ContainsKey(modInfo.id))
+                {
+                    Debug.LogError("Another mod exists with the name '" + modInfo.id + "'! Skipping mod.");
                     return;
                 }
 
                 var semlInfo = new SemlInfo(file, assembly, mod, modInfo);
 
-                mods.Add(modInfo.name, semlInfo);
+                mods.Add(modInfo.id, semlInfo);
                 Debug.Log("Loaded '" + semlInfo.id + "' mod.");
 
                 // Initializing should be done at the end
@@ -127,6 +144,11 @@ namespace ScaphandreEngine.ModLoader
             {
                 Debug.LogException(ex);
             }
+        }
+
+        internal string FormatID(string input)
+        {
+            return Regex.Replace(input.Replace(" ", "_").ToLowerInvariant(), "[^a-z0-9_\\.]", "");
         }
     }
 }
