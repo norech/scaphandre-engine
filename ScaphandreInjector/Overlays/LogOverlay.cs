@@ -60,15 +60,22 @@ namespace ScaphandreInjector.Overlays
         {
             if (!showLogs) return;
 
+            var shownLogs = logs.Where(log => searchPattern == "" || log.ToLower().Contains(searchPattern.ToLower())).ToArray();
+
+            if(shownLogs.Length > 100)
+            {
+                shownLogs = shownLogs.Reverse().Take(100).Reverse().ToArray();
+            }
+
+            var calculatedHeight = 2000 + shownLogs.Length * 50;
+
             int width = Screen.width;
             int height = Screen.height;
             
             GUI.Box(new Rect(0, 0, width, height), GUIContent.none);
 
-            scrollPos = GUI.BeginScrollView(new Rect(0, 0, width, height - 31), scrollPos, new Rect(0, 0, width - 10, 30000));
-            GUI.Label(new Rect(0, 0, width - 10, 30000), "LOGS - F4 + L\n\n" + string.Join("\n\n",
-                logs.Where(log => searchPattern == "" || log.ToLower().Contains(searchPattern.ToLower())).ToArray()
-            ), textStyle);
+            scrollPos = GUI.BeginScrollView(new Rect(0, 0, width, height - 31), scrollPos, new Rect(0, 0, width - 10, calculatedHeight));
+            GUI.Label(new Rect(0, 0, width - 10, calculatedHeight), "LOGS - F4 + L\n\n" + string.Join("\n\n", shownLogs), textStyle);
 
             GUI.EndScrollView();
 
